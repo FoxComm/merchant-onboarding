@@ -15,7 +15,12 @@ Data is stored and porwered by the FoxCommerce backend API.
 
   We're using [Flow](http://flowtype.org) to perform type checks and `babel-plugin-typecheck` for same thing at runtime. Install Flow per the instructions on the website. Checkout required version in `.flowconfig` file.
 
-* `public_key.pem` in the root of the project, as described in the [engineering wiki](https://github.com/FoxComm/engineering-wiki/blob/master/development/setup.md#developing-frontend-applications)
+* `public_key.pem` in the root of the project. This is the public key used to verify the authenticity of the JWT. See Max or Jeff for access to the key.
+
+### Environment Variables
+
+- `API_URL`: Location of the API to hit. Example: `https://tgt.foxcommerce.com`
+- `ASHES_URL`: Admin experience to redirect to once onboarding is complete. Example: `https://tgt.foxcommerce.com/admin`
 
 ### Run the dev server
 
@@ -26,20 +31,6 @@ Data is stored and porwered by the FoxCommerce backend API.
   `npm run dev` — backend at `http://localhost:4042`
 
 1. Develop it at http://localhost:4042/
-
-You can set the marketplace backend API and Ashes URLs as a shell variables `API_URL` and `ASHES_URL`.
-
-For example, to hit staging:
-
-```
-export API_URL=http://tgt.foxcommerce.com
-export ASHES_URL=https://tgt.foxcommerce.com/admin
-```
-then run
-
-```
-npm run dev
-```
 
 For **static type checking** [flowtype](http://flowtype.org/) is used. You can run check manually by `npm run flow` command.
 
